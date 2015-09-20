@@ -66,20 +66,42 @@ angular.module('starter')
             }
 
         });
+                    var posOptions = {timeout: 10000, enableHighAccuracy: false};
+                    $cordovaGeolocation
+                      .getCurrentPosition(posOptions)
+                      .then(function (position) {
+                        var lat  = position.coords.latitude ;
+                        var long = position.coords.longitude;
+                            drawmap  ($scope.lat, $scope.long);
+                      }, function(err) {
+                        // error
+                      });
+
+
+
+
+
+
+
+
         var zValue = $scope.$eval(attrs.zoom);
         var lat = $scope.$eval(attrs.lat);
         var lng = $scope.$eval(attrs.lng);
         var myLatLng = new google.maps.LatLng(lat,lng);
         mapOptions = {
-            zoom : zValue,
+            zoom : 17,
             center : myLatLng
         };
-        map = new google.maps.Map(element[0],mapOptions);
+        function dreMap(lat,long){
+        map = new google.maps.Map(document.getElementById('map'),mapOptions);
         marker = new google.maps.Marker({
             position: myLatLng,
-            map: map,
+            map: map ,
             draggable:true
+
         });
+
+    }
         google.maps.event.addListener(marker, 'dragend', function(evt){
             console.log('Current Latitude:',evt.latLng.lat(),'Current Longitude:',evt.latLng.lng());
         });
