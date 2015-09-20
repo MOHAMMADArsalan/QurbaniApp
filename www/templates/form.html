@@ -1,0 +1,40 @@
+<ion-view view-title="User Information">
+    <ion-content>
+        <form ng-submit="addUser()">
+    <div class="list">
+        <a class="item item-thumbnail-left" href="" ng-click="takePicture()">
+            <img ng-src="{{imgSrc}}">
+        </a>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">First Name</span>
+            <input type="text" ng-model="user.firstName" >
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Last Name</span>
+            <input type="text" ng-model="user.lastName">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Contact Number </span>
+            <input type="number" ng-model="user.contactNumber">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Email Address</span>
+            <input type="email" class="positive" ng-model="user.email">
+        </label>
+        <div>
+            <div id="map" lat="-23.639492" lng="133.709107" zoom="8" map></div>
+            <!--<map id="map" lat="-23.639492" lng="133.709107" zoom="8" ></map>-->
+            <div width="80%" class="list list-inset" style="margin-left:10%;margin-right: 10%">
+                <label class="item item-input">
+                    <input type="text" ng-model="user.desc" placeholder="Add Location">
+                </label>
+
+                <button class="button button-full button-positive" ng-click="saveDetails()">Save</button>
+            </div>
+        </div>
+        <button class="button button-positive" style="width: 200px;text-align: center;margin:auto">Submit</button>
+        <br>
+    </div>
+        </form>
+    </ion-content>
+</ion-view>

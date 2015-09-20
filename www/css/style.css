@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+.item-checkbox .checkbox{
+  right: initial !important;
+}
+.todolenght {
+  font-family: sans-serif;
+  font-size:3em;
+
+}
+#map{
+  width:80%;
+  height:400px;
+  margin:10px auto;
+  box-shadow:0 3px 25px black;
+}
